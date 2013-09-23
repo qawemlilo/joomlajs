@@ -84,9 +84,7 @@ exports.template = function(grunt, init, done) {
     props.npm_test = 'grunt test';
     props.keywords = ['gruntplugin'];
     props.devDependencies = {
-      'grunt-contrib-jshint': '~0.6.0',
-      'grunt-contrib-clean': '~0.4.0',
-      'grunt-contrib-nodeunit': '~0.2.0',
+      'grunt-contrib-compress': '~0.5.2',
     };
     props.peerDependencies = {
       'grunt': props.grunt_version,
@@ -100,6 +98,8 @@ exports.template = function(grunt, init, done) {
 
     // Actually copy (and process) files.
     init.copyAndProcess(files, props);
+    
+    
 
     // Generate package.json file.
     init.writePackageJSON('package.json', props);
