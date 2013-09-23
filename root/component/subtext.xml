@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+	<name>{%= name %}</name>
+	<creationDate>{%= grunt.template.today('yyyy') %}</creationDate>
+	<author>{%= author_name %}</author>
+	<authorUrl>{%= author_url %}</authorUrl>
+	<authorEmail>{%= author_email %}</authorEmail>
+	<copyright>{%= author_name %}</copyright>
+	<license>{%= licenses.join(', ') %}</license>
+	<version>{%= version %}</version>
+	<description><![CDATA[COM_{%= name.toUpperCase() %}_COMPONENT_DESCRIPTION]]></description>
+	<scriptfile>install.php</scriptfile>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<files folder="site">
+		<filename>controller.php</filename>
+		<folder>controllers</folder>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>models</folder>
+		<filename>router.php</filename>
+		<filename>{%= name.toLowerCase() %}.php</filename>
+		<folder>views</folder>
+	</files>
+	<languages folder="site">
+		<language tag="en-GB">language/en-GB/en-GB.com_{%= name.toLowerCase() %}.ini</language>
+		<language tag="en-US">language/en-US/en-US.com_{%= name.toLowerCase() %}.ini</language>
+	</languages>
+	<administration>
+		<menu>COM_{%= name.toUpperCase() %}_MENU_ITEM_ROOT</menu>
+		<languages folder="admin">
+			<language tag="en-US">language/en-US/en-US.com_{%= name.toLowerCase() %}.ini</language>
+			<language tag="en-US">language/en-US/en-US.com_{%= name.toLowerCase() %}.sys.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_{%= name.toLowerCase() %}.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_{%= name.toLowerCase() %}.sys.ini</language>
+		</languages>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<folder>controllers</folder>
+			<folder>helpers</folder>
+			<filename>index.html</filename>
+			<folder>language</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<filename>{%= name.toLowerCase() %}.php</filename>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+	</administration>
+</extension>
