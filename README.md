@@ -3,9 +3,10 @@
 > A Grunt-init template for creating Joomla! CMS components.
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
+[grunt]: http://gruntjs.com
 
 ## Installation
-If you haven't already done so, install [grunt-init][].
+This application requires [grunt][] and [grunt-init][].
 
 Once grunt-init is installed, place this template in your `~/.grunt-init/`
 directory. It's recommended that you use git to clone this template into that
@@ -33,13 +34,13 @@ Then install all dependencies.
 npm install
 ```
 
-To create a Joomla! component zipped file run the command below.
+To create a zipped file for your component run the command below.
 
 ```
 grunt build
 ```
 
-Your build file will be saved in the directory named `./build`.
+Your file will be saved in the directory named `build`.
 
 _Note that this template will generate files in the current directory, so be
 sure to change to a new directory first if you don't want to overwrite existing
