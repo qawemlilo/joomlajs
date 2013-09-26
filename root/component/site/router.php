@@ -2,9 +2,9 @@
 /**
  * SEO Router
  * 
- * @package		Subtext
+ * @package		{%= name %}
  * @subpackage	Component
- * @license		GNU/GPL
+ * @license		{%= licenses.join(', ') %}
  */
 
 // NO DIRECT ACCESS

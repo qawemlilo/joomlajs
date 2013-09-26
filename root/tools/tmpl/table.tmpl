@@ -1,0 +1,22 @@
+<?php
+/**
+ * {%= name %} Table {%= view %}
+ 
+ * @package		{%= name %}
+ * @subpackage	Component
+ * @license		{%= licenses.join(', ') %}
+ */
+ 
+// No direct access
+defined('_JEXEC') or die('Restricted access');
+
+// import Joomla table library
+jimport('joomla.database.table');
+ 
+
+class {%= name %}Table{%= view %} extends JTable 
+{
+    function __construct(&$db) {
+        parent::__construct('#__{%= database %}', 'id', $db);
+    }
+}

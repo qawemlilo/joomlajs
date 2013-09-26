@@ -1,19 +1,19 @@
 /*
- * grunt-init-gruntplugin
+ * grunt-init-joomlajs
  * https://gruntjs.com/
  *
- * Copyright (c) 2013 "Cowboy" Ben Alman, contributors
+ * Copyright (c) 2013 Qawelesizwe
  * Licensed under the MIT license.
  */
 
-'use strict';
+"use strict";
 
 // Basic template description.
-exports.description = 'Create a Grunt plugin, including Nodeunit unit tests.';
+exports.description = 'Create a Joomla! component.';
 
 // Template-specific notes to be displayed before question prompts.
-exports.notes = 'For more information about Grunt plugin best practices, ' +
-  'please see the docs at http://gruntjs.com/creating-plugins';
+exports.notes = 'For more information about how to use this template, ' +
+  'please visit https://github.com/qawemlilo/joomlajs';
 
 // Template-specific notes to be displayed after question prompts.
 exports.after = 'You should now install project dependencies with _npm ' +
@@ -97,7 +97,7 @@ exports.template = function(grunt, init, done) {
     init.addLicenseFiles(files, props.licenses);
 
     // Actually copy (and process) files.
-    init.copyAndProcess(files, props);
+    init.copyAndProcess(files, props, {noProcess: 'tools/**'});
 
     // Generate package.json file.
     init.writePackageJSON('package.json', props);

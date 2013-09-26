@@ -6,7 +6,7 @@
 [grunt]: http://gruntjs.com
 
 ## Installation
-This application requires [grunt][] and [grunt-init][].
+This application requires [grunt][] and [grunt-init][] to be installed.
 
 Once grunt-init is installed, place this template in your `~/.grunt-init/`
 directory. It's recommended that you use git to clone this template into that

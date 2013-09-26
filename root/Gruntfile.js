@@ -22,8 +22,16 @@ module.exports = function(grunt) {
                 {cwd: './component/', src: ['**/*'], expand: true, dest: ''}, // includes files in path and its subdirs
             ]
         }
+    },
+    
+    index: {
+        src: 'index.tmpl',  // source template file
+        dest: 'index.html'  // destination file (usually index.html)
     }
   });
+  
+  // Actually load this plugin's task(s).
+  grunt.loadTasks('tasks');
   
   grunt.loadNpmTasks('grunt-contrib-compress');
   

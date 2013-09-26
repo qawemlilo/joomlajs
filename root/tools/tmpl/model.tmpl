@@ -1,0 +1,23 @@
+<?php
+/**
+ * {%= name %} Model {%= view %}
+ 
+ * @package		{%= name %}
+ * @subpackage	Component
+ * @license		{%= licenses.join(', ') %}
+ */
+ 
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
+
+// import Joomla modelitem library
+jimport('joomla.application.component.modelitem');
+
+// import model table
+require_once(dirname(__FILE__) . DS . 'tables' . DS . '{%= view %}.php');
+
+
+class {%= name %}Controller{%= view %} extends JController 
+{
+
+}

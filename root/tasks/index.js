@@ -1,15 +1,14 @@
-/*
- * {%= name %}
- * {%= homepage %}
- *
- * Copyright (c) {%= grunt.template.today('yyyy') %} {%= author_name %}
- * Licensed under the {%= licenses.join(', ') %} license{%= licenses.length === 1 ? '' : 's' %}.
- */
+module.exports = function( grunt ) {
+    grunt.registerTask("index", "Generate index.html depending on configuration", function() {
+        var conf = grunt.config('index'),
+            tmpl = grunt.file.read(conf.src);
 
-'use strict';
+        grunt.file.write(conf.dest, grunt.template.process(tmpl));
 
-module.exports = function(grunt) {
-
+        grunt.log.writeln('Generated \'' + conf.dest + '\' from \'' + conf.src + '\'');
+    });
+    
+    
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
@@ -46,5 +45,4 @@ module.exports = function(grunt) {
       grunt.log.writeln('File "' + f.dest + '" created.');
     });
   });
-
-};
+}
