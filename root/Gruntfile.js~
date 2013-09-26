@@ -27,7 +27,7 @@ module.exports = function(grunt) {
     {%= name.toLowerCase() %}: {
         view: {
             files: [
-                {src: 'tools/tmpl/model.tmpl'}
+                {src: 'tools/tmpl/model.tmpl', }
             ]
         }
     }
