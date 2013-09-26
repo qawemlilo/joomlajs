@@ -1,9 +1,12 @@
 {
-  "tasks/name.js": "tasks/{%= short_name %}.js",
-  "test/name_test.js": "test/{%= short_name %}_test.js",
-  "component/admin/subtext.php": "component/admin/{%= name.toLowerCase() %}.php",
-  "component/subtext.xml": "component/{%= name.toLowerCase() %}.xml",
-  "component/site/subtext.php": "component/site/{%= name.toLowerCase() %}.php",
-  "component/site/views/subtext": "component/site/views/{%= name.toLowerCase() %}",
+  "component/admin/joomlajs.php": "component/admin/{%= name.toLowerCase() %}.php",
+  "component/joomlajs.xml": "component/{%= name.toLowerCase() %}.xml",
+  "component/site/joomlajs.php": "component/site/{%= name.toLowerCase() %}.php",
+  "component/site/language/en-GB/en-GB.com_joomlajs.ini": "component/site/language/en-GB/en-GB.com_{%= name.toLowerCase() %}.ini",
+  "component/site/language/en-US/en-US.com_joomlajs.ini": "component/site/language/en-US/en-US.com_{%= name.toLowerCase() %}.ini",
+  "component/admin/language/en-GB/en-GB.com_joomlajs.ini": "component/admin/language/en-GB/en-GB.com_{%= name.toLowerCase() %}.ini",
+  "component/admin/language/en-GB/en-GB.com_joomlajs.sys.ini": "component/admin/language/en-GB/en-GB.com_{%= name.toLowerCase() %}.sys.ini",
+  "component/admin/language/en-US/en-US.com_joomlajs.ini": "component/admin/language/en-US/en-US.com_{%= name.toLowerCase() %}.ini",
+  "component/admin/language/en-US/en-US.com_joomlajs.sys.ini": "component/admin/language/en-US/en-US.com_{%= name.toLowerCase() %}.sys.ini",
   "component": "{%= name.toLowerCase() %}"
 }

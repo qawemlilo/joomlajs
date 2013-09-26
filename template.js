@@ -98,8 +98,6 @@ exports.template = function(grunt, init, done) {
 
     // Actually copy (and process) files.
     init.copyAndProcess(files, props);
-    
-    
 
     // Generate package.json file.
     init.writePackageJSON('package.json', props);

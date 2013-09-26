@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fields>
+		<fieldset name="params" label="COM_{%= name.toUpperCase() %}_OPTIONS_FIELDSET_LEGEND">
+			<field name="default_id" type="menuitem" default="" label="COM_{%= name.toUpperCase() %}_DEFAULT_ROUTE_ID_LABEL" description="COM_{%= name.toUpperCase() %}_DEFAULT_ROUTE_ID_DESC" />
+		</fieldset>
+		<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL">
+			<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC" class="inputbox" validate="rules" filter="rules" component="com_{%= name.toLowerCase() %}" section="component" />
+		</fieldset>
+	</fields>
+</config>

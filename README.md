@@ -1,6 +1,6 @@
-# grunt-init-gruntplugin
+# JoomlaJS
 
-> Create a gruntplugin module with [grunt-init][], including Nodeunit unit tests.
+> A Grunt-init template for creating Joomla! CMS components.
 
 [grunt-init]: http://gruntjs.com/project-scaffolding
 
@@ -12,7 +12,7 @@ directory. It's recommended that you use git to clone this template into that
 directory, as follows:
 
 ```
-git clone https://github.com/gruntjs/grunt-init-gruntplugin.git ~/.grunt-init/gruntplugin
+git clone https://github.com/qawemlilo/joomlajs.git ~/.grunt-init/joomlajs
 ```
 
 _(Windows users, see [the documentation][grunt-init] for the correct
@@ -24,7 +24,7 @@ At the command-line, cd into an empty directory, run this command and follow
 the prompts.
 
 ```
-grunt-init gruntplugin
+grunt-init joomlajs
 ```
 
 _Note that this template will generate files in the current directory, so be

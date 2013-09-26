@@ -6,18 +6,20 @@
  * Licensed under the {%= licenses.join(', ') %} license{%= licenses.length === 1 ? '' : 's' %}.
  */
 
-'use strict';
+"use strict";
 
 module.exports = function(grunt) {
   grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    
     compress: {
         template: {
             options: {
-                archive: './com_' + <%= name.toLowerCase() %> + '/js_wright.zip'
+                archive: "./build/com_<%= pkg.name.toLowerCase() %>.zip"
             },
             
             files: [
-                {cwd: './com_' + <%= name.toLowerCase() %> + '/', src: ['**/*'], expand: true, dest: ''}, // includes files in path and its subdirs
+                {cwd: './component/', src: ['**/*'], expand: true, dest: ''}, // includes files in path and its subdirs
             ]
         }
     }
@@ -26,5 +28,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   
   grunt.registerTask('default', ['compress']);
+  grunt.registerTask('build', ['compress:template']);
 };
 
