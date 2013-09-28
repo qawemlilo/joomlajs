@@ -38,7 +38,7 @@ module.exports = function(grunt) {
   
   grunt.loadNpmTasks('grunt-contrib-compress');
   
-  grunt.registerTask('default', ['compress']);
-  grunt.registerTask('build', ['compress:template']);
+  grunt.registerTask('default', ['compress', '{%= name.toLowerCase() %}']);
+  grunt.registerTask('{%= name.toLowerCase() %}', ['{%= name.toLowerCase() %}']);
 };
 

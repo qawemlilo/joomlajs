@@ -4,12 +4,12 @@ module.exports = function( grunt ) {
         // Iterate over all specified file groups.
         this.files.forEach(function(file) {
         
-            var filepath, dest, template, html;
+            var template, html;
             
-            filepath = file.src;
-            dest = file.dest + options.ext;
+            var src = file.src;
+            var dest = file.dest;
             
-            if (!grunt.file.exists(filepath)) {
+            if (!grunt.file.exists(src)) {
                 grunt.log.warn('Source file "' + filepath + '" not found.');
                 return false;
             }
