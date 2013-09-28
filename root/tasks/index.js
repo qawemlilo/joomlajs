@@ -1,12 +1,13 @@
 module.exports = function( grunt ) {
-    grunt.registerMultiTask('{%= name %}', '{%= description %}', function() {
+    grunt.registerMultiTask('{%= name.toLowerCase() %}', '{%= description %}', function() {
+
         // Iterate over all specified file groups.
         this.files.forEach(function(file) {
         
             var filepath, dest, template, html;
             
             filepath = file.src;
-            dest = file.dest + '.' + file.ext;
+            dest = file.dest + options.ext;
             
             if (!grunt.file.exists(filepath)) {
                 grunt.log.warn('Source file "' + filepath + '" not found.');

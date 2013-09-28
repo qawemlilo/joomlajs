@@ -15,19 +15,19 @@ module.exports = function(grunt) {
     compress: {
         template: {
             options: {
-                archive: "./build/com_<%= pkg.name.toLowerCase() %>.zip"
+                archive: "build/com_<%= pkg.name.toLowerCase() %>.zip"
             },
             
             files: [
-                {cwd: './component/', src: ['**/*'], expand: true, dest: ''}, // includes files in path and its subdirs
+                {cwd: 'component/', src: ['**/*'], expand: true, dest: ''}, // includes files in path and its subdirs
             ]
         }
     },
     
     {%= name.toLowerCase() %}: {
-        view: {
+        model: {          
             files: [
-                {src: 'tools/tmpl/model.tmpl', }
+                {src: 'tools/tmpl/model.tmpl', dest: 'component/models/model.php'}
             ]
         }
     }
