@@ -101,6 +101,7 @@ exports.template = function(grunt, init, done) {
       props.keywords = ['gruntplugin'];
       props.devDependencies = {
           'grunt-contrib-compress': '~0.5.2',
+          "grunt-exec": "~0.4.2",
       };
       props.peerDependencies = {
           'grunt': props.grunt_version,

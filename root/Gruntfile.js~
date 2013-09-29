@@ -12,6 +12,10 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     
+    name: '<%= pkg.name %>',
+    
+    view: '',
+    
     compress: {
         template: {
             options: {
@@ -24,13 +28,34 @@ module.exports = function(grunt) {
         }
     },
     
-    {%= name.toLowerCase() %}: {
+    exec: {
+        test: {
+            cmd: "find ./component '*.php' -exec php -l {} \;"
+        }
+    },
+    
+    joomlajs: {
         model: {          
             files: [
-                {src: 'tools/tmpl/model.tmpl', dest: 'component/models/model.php'}
+                {tmpl: 'tools/tmpl/model.tmpl', dest: 'component/site/models/<%= view %>.php'},
+                {tmpl: 'tools/tmpl/table.tmpl', dest: 'component/site/models/tables/<%= view %>.php'}
+            ]
+        },
+        
+        view: {          
+            files: [
+                {tmpl: 'tools/tmpl/view.tmpl', dest: 'component/site/views/<%= view %>/view.html.php'},
+                {tmpl: 'tools/tmpl/default.tmpl', dest: 'component/site/views/<%= view %>/tmpl/default.php'},
+                {tmpl: 'tools/tmpl/xml.tmpl', dest: 'component/site/views/<%= view %>/tmpl/default.xml'}
+            ]
+        },
+        
+        controller: {          
+            files: [
+                {tmpl: 'tools/tmpl/controller.tmpl', dest: 'component/site/controllers/<%= view %>.php'}
             ]
         }
-    }
+    },
   });
   
   // Actually load this plugin's task(s).
@@ -39,6 +64,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-compress');
   
   grunt.registerTask('default', ['compress']);
-  grunt.registerTask('build', ['compress:template']);
+  grunt.registerTask('build', ['exec:test', 'compress:template']);
+  grunt.registerTask('joomla', ['joomlajs']);
 };
 
