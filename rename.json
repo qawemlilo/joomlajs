@@ -7,6 +7,5 @@
   "component/admin/language/en-GB/en-GB.com_joomlajs.ini": "component/admin/language/en-GB/en-GB.com_{%= name.toLowerCase() %}.ini",
   "component/admin/language/en-GB/en-GB.com_joomlajs.sys.ini": "component/admin/language/en-GB/en-GB.com_{%= name.toLowerCase() %}.sys.ini",
   "component/admin/language/en-US/en-US.com_joomlajs.ini": "component/admin/language/en-US/en-US.com_{%= name.toLowerCase() %}.ini",
-  "component/admin/language/en-US/en-US.com_joomlajs.sys.ini": "component/admin/language/en-US/en-US.com_{%= name.toLowerCase() %}.sys.ini",
-  "component": "{%= name.toLowerCase() %}"
+  "component/admin/language/en-US/en-US.com_joomlajs.sys.ini": "component/admin/language/en-US/en-US.com_{%= name.toLowerCase() %}.sys.ini"
 }

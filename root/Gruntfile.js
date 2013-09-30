@@ -12,6 +12,17 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     
+    jshint: {
+        all: [
+            'Gruntfile.js',
+            '*.js'
+        ],
+        
+        options: {
+            jshintrc: '.jshintrc'
+        }
+    },
+    
     name: '<%= pkg.name %>',
     
     view: '',
@@ -30,42 +41,60 @@ module.exports = function(grunt) {
     
     exec: {
         test: {
-            cmd: "find ./component '*.php' -exec php -l {} \;"
+            cmd: "find ./component -name '*.php' -exec php -l {} ;",
+            
+            onOutData: function (data) {
+                console.log(data);
+                
+                if (data.match(/Errors parsing|PHP Parse error/g)) {
+                    process.exit(1);
+                }
+            },
+
+            onErrData: function (data) {
+                console.log(data);
+                
+                if (data.match(/Errors parsing|PHP Parse error/g)) {
+                    process.exit(1);
+                }
+            }
         }
     },
     
+    // not yet fully functional
     joomlajs: {
         model: {          
             files: [
-                {tmpl: 'tools/tmpl/model.tmpl', dest: 'component/site/models/<%= view %>.php'},
-                {tmpl: 'tools/tmpl/table.tmpl', dest: 'component/site/models/tables/<%= view %>.php'}
+                {tmpl: 'tmpl/com/model.tmpl', dest: 'component/site/models/<%= view %>.php'},
+                {tmpl: 'tmpl/com/table.tmpl', dest: 'component/site/models/tables/<%= view %>.php'}
             ]
         },
         
         view: {          
             files: [
-                {tmpl: 'tools/tmpl/view.tmpl', dest: 'component/site/views/<%= view %>/view.html.php'},
-                {tmpl: 'tools/tmpl/default.tmpl', dest: 'component/site/views/<%= view %>/tmpl/default.php'},
-                {tmpl: 'tools/tmpl/xml.tmpl', dest: 'component/site/views/<%= view %>/tmpl/default.xml'}
+                {tmpl: 'tmpl/com/view.tmpl', dest: 'component/site/views/<%= view %>/view.html.php'},
+                {tmpl: 'tmpl/com/default.tmpl', dest: 'component/site/views/<%= view %>/tmpl/default.php'},
+                {tmpl: 'tmpl/com/xml.tmpl', dest: 'component/site/views/<%= view %>/tmpl/default.xml'}
             ]
         },
         
         controller: {          
             files: [
-                {tmpl: 'tools/tmpl/controller.tmpl', dest: 'component/site/controllers/<%= view %>.php'}
+                {tmpl: 'tmpl/com/controller.tmpl', dest: 'component/site/controllers/<%= view %>.php'}
             ]
         }
-    },
+    }
   });
   
   // Actually load this plugin's task(s).
   grunt.loadTasks('tasks');
   
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-compress');
   grunt.loadNpmTasks('grunt-exec');
   
-  grunt.registerTask('default', ['compress']);
-  grunt.registerTask('build', ['exec:test', 'compress:template']);
-  grunt.registerTask('joomla', ['joomlajs']);
+  grunt.registerTask('default', ['jshint', 'exec:test', 'compress']);
+  grunt.registerTask('build', ['jshint', 'exec:test', 'compress']);
+  grunt.registerTask('test', ['jshint', 'exec:test']);
 };
 

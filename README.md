@@ -34,6 +34,8 @@ Then install all dependencies.
 npm install
 ```
 
+All the files for the component are located in the directory named `component`, this is where all your developemnt happens. 
+
 To create a zipped file for your component run the command below.
 
 ```
