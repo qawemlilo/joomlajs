@@ -1,6 +1,9 @@
+
+"use strict";
+
 module.exports = function( grunt ) {
     grunt.registerMultiTask('joomlajs', 'Compiles Joomla! extension templates', function() {
-
+            
         // Iterate over all specified file groups.
         this.files.forEach(function(file) {
         
@@ -13,13 +16,13 @@ module.exports = function( grunt ) {
                 grunt.log.warn('Source file "' + tmpl + '" not found.');
                 return false;
             }
-
+        
             template = grunt.file.read(tmpl);
             phpcode = grunt.template.process(template);
-
+        
             // Write the destination file.
             grunt.file.write(dest, phpcode);
-
+        
             // Print a success message.
             grunt.log.writeln('File "' + dest + '" created.');
         });

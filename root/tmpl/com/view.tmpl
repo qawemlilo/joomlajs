@@ -1,10 +1,10 @@
 <?php
 /**
- * {%= name %} View {%= view %}
+ * <%= name %> View <%= view %>
  
- * @package		{%= name %}
+ * @package		<%= name %>
  * @subpackage	Component
- * @license		{%= licenses.join(', ') %}
+ * @license		<%= licenses.join(', ') %>
  */
  
 // No direct access to this file
@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
 
-class {%= name %}View{%= view %} extends JView 
+class <%= name %>View<%= view %> extends JView 
 {
     function display($tpl = null) {
         $this->item = $this->get('Item');

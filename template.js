@@ -68,9 +68,9 @@ exports.template = function(grunt, init, done) {
             done(null, name);
         }),
     
-        init.prompt('description', 'The best Grunt plugin ever.'),
+        init.prompt('description', 'Joomla! component.'),
     
-        init.prompt('version'),
+        init.prompt('version', '0.0.1'),
       
         init.prompt('repository'),
       
@@ -80,11 +80,11 @@ exports.template = function(grunt, init, done) {
       
         init.prompt('licenses'),
       
-        init.prompt('author_name'),
+        init.prompt('author_name', 'Qawelesizwe Mlilo'),
       
-        init.prompt('author_email'),
+        init.prompt('author_email', 'qawemlilo@gmail.com'),
       
-        init.prompt('author_url'),
+        init.prompt('author_url', 'http://blog.ragingflame.co.za'),
       
         init.prompt('grunt_version'),
       
@@ -98,9 +98,12 @@ exports.template = function(grunt, init, done) {
         props.main = 'Gruntfile.js';
         props.npm_test = 'grunt test';
         props.keywords = ['gruntplugin'];
+        props.dependencies = {
+            'simple-prompt': '~0.0.4'
+        };
         props.devDependencies = {
             'grunt-contrib-compress': '~0.5.2',
-            'grunt-exec': 'git@github.com:qawemlilo/grunt-exec.git#moreoptions',
+            'grunt-exec': '~0.4.2',
             'grunt-contrib-jshint': '~0.6.0'
         };
         props.peerDependencies = {

@@ -1,10 +1,10 @@
 <?php
 /**
- * {%= name %} Model {%= view %}
+ * <%= name %> Model <%= view %>
  
- * @package		{%= name %}
+ * @package		<%= name %>
  * @subpackage	Component
- * @license		{%= licenses.join(', ') %}
+ * @license		<%= licenses.join(', ') %>
  */
  
 // No direct access to this file
@@ -14,10 +14,10 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.modelitem');
 
 // import model table
-require_once(dirname(__FILE__) . DS . 'tables' . DS . '{%= view %}.php');
+require_once(dirname(__FILE__) . DS . 'tables' . DS . '<%= view.toLowerCase() %>.php');
 
 
-class {%= name %}Controller{%= view %} extends JController 
+class <%= name %>Controller<%= view %> extends JController 
 {
 
 }
