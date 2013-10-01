@@ -1,10 +1,10 @@
 <?php
 /**
- * <%= name %> Table <%= view %>
+ * <%= grunt.config('name') %> Table <%= grunt.config('view') %>
  
- * @package		<%= name %>
+ * @package		<%= grunt.config('name') %>
  * @subpackage	Component
- * @license		<%= licenses.join(', ') %>
+ * @license		<%= grunt.config('licenses').join(', ') %>
  */
  
 // No direct access
@@ -14,9 +14,9 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.database.table');
  
 
-class <%= name %>Table<%= view %> extends JTable 
+class <%= grunt.config('name') %>Table<%= grunt.config('view') %> extends JTable 
 {
     function __construct(&$db) {
-        parent::__construct('#__<%= database %>', 'id', $db);
+        parent::__construct('#__<%= grunt.config('database') %>', 'id', $db);
     }
 }

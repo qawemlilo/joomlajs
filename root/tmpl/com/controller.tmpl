@@ -1,10 +1,10 @@
 <?php
 /**
- * <%= name %> Controller
+ * <%= grunt.config('name') %> Controller
  
- * @package		<%= name %>
+ * @package		<%= grunt.config('name') %>
  * @subpackage	Component
- * @license		<%= licenses.join(', ') %>
+ * @license		<%= grunt.config('licenses').join(', ') %>
  */
  
 // No direct access to this file
@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 // import Joomla controller library
 jimport('joomla.application.component.controller');
 
-class <%= name %>Controller<%= view %> extends JController 
+class <%= grunt.config('name') %>Controller<%= grunt.config('view') %> extends JController 
 {
 
 }

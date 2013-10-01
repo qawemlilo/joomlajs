@@ -33,24 +33,22 @@ var toCamelCase = function(txt) {
             
           return word.charAt(0).toUpperCase() + word.slice(1);
     }
-        
-    var words = [];
-        
+
     if (txt.indexOf('-') >= 0) {
         txt = txt.replace(/ /g, ' ');
     }
-        
+    
     if (txt.indexOf(' ') >= 0) {
-        words = txt.split(' ');
-	    
+        var words = txt.split(' '), result = [];
+        
         words.forEach(function (word) {
-            words.push(toUpperCaseFirst(word))  
+            result.push(toUpperCaseFirst(word))  
         });
-            
-        return toUpperCaseFirst(txt);
+        
+        return result.join('');
     }
         
-    return words
+    return toUpperCaseFirst(txt);
 };
 
 
@@ -61,7 +59,6 @@ exports.template = function(grunt, init, done) {
         // Prompt for these values.
         init.prompt('name', function(value, props, done) {
           
-            // Prepend grunt- to default name.
             var name = toCamelCase(value);
       
             // Replace 'grunt-contrib' with 'grunt' and give a warning

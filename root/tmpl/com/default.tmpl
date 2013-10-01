@@ -1,10 +1,10 @@
 <?php
 /**
- * <%= name %> Template <%= view %>
+ * <%= grunt.config('name') %> Template <%= grunt.config('view') %>
  
- * @package		<%= name %>
+ * @package		<%= grunt.config('name') %>
  * @subpackage	Component
- * @license		<%= licenses.join(', ') %>
+ * @license		<%= grunt.config('licenses').join(', ') %>
  */
  
 // No direct access to this file
@@ -12,5 +12,5 @@ defined('_JEXEC') or die('Restricted access');
 ?>
 
 <div>
-    <h1><%= name %></h1>
+    <h1><%= grunt.config('name') %></h1>
 </div>

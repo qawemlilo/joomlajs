@@ -1,10 +1,10 @@
 <?php
 /**
- * <%= name %> View <%= view %>
+ * <%= grunt.config('name') %> View <%= grunt.config('view') %>
  
- * @package		<%= name %>
+ * @package		<%= grunt.config('name') %>
  * @subpackage	Component
- * @license		<%= licenses.join(', ') %>
+ * @license		<%= grunt.config('licenses').join(', ') %>
  */
  
 // No direct access to this file
@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
 // import Joomla view library
 jimport('joomla.application.component.view');
 
-class <%= name %>View<%= view %> extends JView 
+class <%= grunt.config('name') %>View<%= grunt.config('view') %> extends JView 
 {
     function display($tpl = null) {
         $this->item = $this->get('Item');

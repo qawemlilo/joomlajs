@@ -1,10 +1,10 @@
 <?php
 /**
- * <%= name %> Model <%= view %>
+ * <%= grunt.config('name') %> Model <%= grunt.config('view') %>
  
- * @package		<%= name %>
+ * @package		<%= grunt.config('name') %>
  * @subpackage	Component
- * @license		<%= licenses.join(', ') %>
+ * @license		<%= grunt.config('licenses').join(', ') %>
  */
  
 // No direct access to this file
@@ -14,10 +14,10 @@ defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.modelitem');
 
 // import model table
-require_once(dirname(__FILE__) . DS . 'tables' . DS . '<%= view.toLowerCase() %>.php');
+require_once(dirname(__FILE__) . DS . 'tables' . DS . '<%= grunt.config('view').toLowerCase() %>.php');
 
 
-class <%= name %>Controller<%= view %> extends JController 
+class <%= grunt.config('name') %>Controller<%= grunt.config('view') %> extends JController 
 {
 
 }

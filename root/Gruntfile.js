@@ -129,7 +129,6 @@ module.exports = function(grunt) {
         
         prompt(questions, function (answers) {
             grunt.config.set('view', answers.view);
-            grunt.config.set('database', answers.database);
             
             grunt.task.run([mytask]);
             done();
