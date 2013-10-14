@@ -1,0 +1,10 @@
+<?php 
+defined('_JEXEC') or die('Restricted access'); // no direct access 
+
+$document =& JFactory::getDocument();
+$document->addStyleSheet(JURI::base() . 'modules/mod_hpsearch/assets/css/typeahead.js-bootstrap.css');
+$document->addStyleDeclaration(
+'input, textarea, .uneditable-input {
+  width: 400px;
+}');
+?>

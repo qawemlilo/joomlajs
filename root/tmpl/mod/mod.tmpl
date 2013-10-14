@@ -1,0 +1,15 @@
+<?php
+/**
+ * @package		<%= grunt.config('name') %>
+ * @subpackage	Module
+ * @license		<%= grunt.config('licenses').join(', ') %>
+ */
+ 
+// No direct access to this file
+defined('_JEXEC') or die('Restricted access');
+
+
+require_once(dirname(__FILE__).DS.'helper.php');
+
+
+require(JModuleHelper::getLayoutPath('mod_{%= name.toLowerCase() %}'));

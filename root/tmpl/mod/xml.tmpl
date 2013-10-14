@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" version="2.5.8" method="upgrade">
+    <name><%= name %></name>
+    <author>{%= author_name %}</author>
+    <authorEmail>{%= author_email %}</authorEmail>
+    <authorUrl>{%= author_url %}</authorUrl>
+    <license>{%= licenses.join(', ') %}</license>
+    <version>{%= version %}</version>
+    <description>{%= description %}</description>
+
+    <files>
+        <filename>mod_{%= name.toLowerCase() %}.xml</filename>
+        <filename module="mod_{%= name.toLowerCase() %}">mod_{%= name.toLowerCase() %}.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <folder>tmpl</folder>
+        <folder>assets</folder>
+    </files>
+</extension>
